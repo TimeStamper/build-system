@@ -5,6 +5,15 @@
 #    Info: Specifies the prerequisites needed for building a x86 C++ test application.
 #
 
+
+#---------------------------------------------------------------------------------------------------
+# Path Definitions
+#
+MOCK_FRAMEWORK_PATH := sw/gmock/gmock-1.7.0
+TEST_FRAMEWORK_PATH := $(MOCK_FRAMEWORK_PATH)/gtest
+boost_root_path := sw/boost/boost_1_58_0
+
+
 #---------------------------------------------------------------------------------------------------
 # Source Definitions
 #
@@ -31,6 +40,7 @@ INCLUDES := \
   -isystem $(DEV_DIR)/$(MOCK_FRAMEWORK_PATH)/include \
   -I$(DEV_DIR)/$(TEST_FRAMEWORK_PATH) \
   -I$(DEV_DIR)/$(MOCK_FRAMEWORK_PATH) \
+  -I$(DEV_DIR)/$(boost_root_path) \
   $(INCLUDES) \
   #
 
