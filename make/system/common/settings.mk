@@ -11,8 +11,9 @@
 AR := ar
 CC := /usr/bin/g++
 CD := cd
+CP := cp -r
 LD := $(CC)
-PRINT := printf
+PRINT := /usr/bin/printf
 RM := rm -f
 
 
@@ -35,7 +36,8 @@ endif
 #---------------------------------------------------------------------------------------------------
 # Print Definitions.
 #
-COMMAND_PREFIX = ">> "
-COMMAND_FORMATTER = "\e[94m\e[1m%-.3s \e[0m\e[1m%s\e[0m\n"
+COMMAND_PREFIX := ">> "
+COMMAND_FORMATTER := '\e[94m\e[1m%-.3s \e[0m\e[1m%s\e[0m\n'
+COMMA := ,
 
 #---------------------------------------------------------------------------------------------------
