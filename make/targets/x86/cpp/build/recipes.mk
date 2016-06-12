@@ -62,4 +62,22 @@ define build-executable
                     $(END_GROUP)
 endef
 
+
+#---------------------------------------------------------------------------------------------------
+# NAME: display-config
+# PARAMETERS: None.
+# DESCRIPTION: Displays all dependencies needed for building the corresponding build target.
+#
+define display-config
+  $(SILENT)$(BLD_SYS_DIR)/$(SYSTEM_RESOURCES_PATH)/build_config.sh \
+             "$(notdir $(EXECUTABLE))" \
+             "$(TARGET_ENVIRONMENT)" \
+             "$(patsubst $(DEV_SRC)%,\$$DEV_SRC%,$(APPLICATION_SOURCE_FILES))" \
+             "$(patsubst -I$(DEV_SRC)%,-I\$$DEV_SRC%,$(INCLUDES))" \
+             "$(LIBRARIES)" \
+             "$(CXX_FLAGS)" \
+             "$(AR_FLAGS)" \
+             "$(LD_FLAGS)" | less -R
+endef
+
 #---------------------------------------------------------------------------------------------------

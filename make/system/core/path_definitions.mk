@@ -10,6 +10,7 @@
 #
 SYSTEM_CORE_PATH := make/system/core
 SYSTEM_COMMON_PATH := make/system/common
+SYSTEM_RESOURCES_PATH := make/system/resources
 
 #---------------------------------------------------------------------------------------------------
 # x86 C++ Path Definitions

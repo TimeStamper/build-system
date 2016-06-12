@@ -36,8 +36,8 @@ MOCK_FRAMEWORK_SOURCE_FILES := \
 # Mock Framework Includes Definitions
 #
 INCLUDES := \
-  -isystem $(DEV_DIR)/$(TEST_FRAMEWORK_PATH)/include \
-  -isystem $(DEV_DIR)/$(MOCK_FRAMEWORK_PATH)/include \
+  -I$(DEV_DIR)/$(TEST_FRAMEWORK_PATH)/include \
+  -I$(DEV_DIR)/$(MOCK_FRAMEWORK_PATH)/include \
   -I$(DEV_DIR)/$(TEST_FRAMEWORK_PATH) \
   -I$(DEV_DIR)/$(MOCK_FRAMEWORK_PATH) \
   -I$(DEV_DIR)/$(boost_root_path) \
