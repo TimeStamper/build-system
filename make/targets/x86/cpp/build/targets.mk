@@ -8,7 +8,7 @@
 #---------------------------------------------------------------------------------------------------
 # Target File Definitions
 #
-DEPENDECY_FILES := $(addsuffix .d,\
+DEPENDENCY_FILES := $(addsuffix .d,\
                                $(basename $(patsubst $(DEV_SRC)%,\
                                                      $(DEV_BLD)%,\
                                                      $(APPLICATION_SOURCE_FILES))))

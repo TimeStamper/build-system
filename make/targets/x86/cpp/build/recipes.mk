@@ -33,7 +33,6 @@ endef
 # NAME: compile-file
 # PARAMETERS: (1) = Object file to be created by the compilation.
 #             (2) = File used as source of the compilation.
-#             (3) = Libraries to be used for compilation.
 # DESCRIPTION: Compiles an object file from a given source file.
 #
 define compile-file
@@ -41,7 +40,6 @@ define compile-file
 	$(call print-command,"Compiling $(patsubst $(DEV_SRC)%,\$$$$DEV_SRC%,$(2))")
 	$(SILENT)$(CC) -c $(2) \
                       $(INCLUDES) \
-                      $(3) \
                       $(CXX_FLAGS) \
                    -o $(1)
 endef
@@ -53,6 +51,7 @@ endef
 # DESCRIPTION: Builds an executable from the given object files.
 #
 define build-executable
+  $(call create-directory,$(dir $(EXECUTABLE)))
   $(call print-command,"Linking executable $(patsubst $(DEV_BLD)%,\$$DEV_BLD%,$(strip $(EXECUTABLE)))")
   $(SILENT)$(LD) -o $(EXECUTABLE) \
                     $(START_GROUP) \

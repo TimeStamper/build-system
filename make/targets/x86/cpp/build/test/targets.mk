@@ -9,8 +9,8 @@
 #---------------------------------------------------------------------------------------------------
 # Path Definitions
 #
-MOCK_FRAMEWORK_LIB_PATH := $(MOCK_FRAMEWORK_PATH)/lib
-TEST_FRAMEWORK_LIB_PATH := $(MOCK_FRAMEWORK_PATH)/lib
+MOCK_FRAMEWORK_LIB_PATH := $(MOCK_FRAMEWORK_PATH)/lib/$(ENV_TYP)
+TEST_FRAMEWORK_LIB_PATH := $(MOCK_FRAMEWORK_PATH)/lib/$(ENV_TYP)
 
 
 #---------------------------------------------------------------------------------------------------

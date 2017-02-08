@@ -19,7 +19,7 @@ boost_root_path := sw/boost/boost_1_58_0
 #
 APPLICATION_SOURCE_FILES := \
   $(SOURCE_FILES) \
-  $(TEST_FILES) \
+  $(APPLICATION_SOURCE_FILES) \
   #
 
 TEST_FRAMEWORK_SOURCE_FILES := \

@@ -14,10 +14,10 @@
 #---------------------------------------------------------------------------------------------------
 # Public Rules Definitions
 #
-x86-build : $(EXECUTABLE)
-
 x86-config :
 	$(call display-config)
+
+x86-build : $(EXECUTABLE)
 
 
 #---------------------------------------------------------------------------------------------------
@@ -40,20 +40,20 @@ endef
 # NAME: prepare-compilation
 # PARAMETERS: (1) = Object file to be created by the compilation.
 #             (2) = File used as source of the compilation.
-#             (3) = Libraries to be used for compilation.
 # DESCRIPTION: Prepares the compilation of object files by explicitly specifying the exact
 #              dependencies between the object file to be created and its source.
 #
 define prepare-compilation
 $(1) : $(2)
-	$(call compile-file,$(1),$(2),$(3))
+	$(call compile-file,$(1),$(2))
 endef
 
 
 #---------------------------------------------------------------------------------------------------
 # Private Rules Definitions
 #
-$(EXECUTABLE) : $(DEPENDECY_FILES) $(OBJECT_FILES)
+$(EXECUTABLE) : $(DEPENDENCY_FILES) \
+                $(OBJECT_FILES)
 	$(call build-executable)
 
 $(foreach dependency_file,\
@@ -70,7 +70,8 @@ $(foreach source_file,\
                                                         $(basename $(patsubst $(DEV_SRC)%,\
                                                                               $(DEV_BLD)%,\
                                                                               $(source_file)))),\
-                                            $(source_file), \
-                                            $(filter-out $(MOCK_FRAMEWORK),$(LIBRARIES)))))
+                                            $(source_file))))
+
+-include $(DEPENDENCY_FILES)
 
 #---------------------------------------------------------------------------------------------------

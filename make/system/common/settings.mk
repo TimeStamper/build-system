@@ -22,6 +22,7 @@ RM := rm -f
 #
 TEST_TARGET_TYPE := test
 RELEASE_TARGET_TYPE := release
+CURRENT_DIR := $(CURDIR)
 
 
 #---------------------------------------------------------------------------------------------------

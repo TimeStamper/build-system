@@ -11,8 +11,10 @@
 # Environment Variables
 #
 DEV_DIR := $(shell echo $$DEV_DIR)
+ENV_TYP := $(shell echo $$ENV_TYP)
 
 $(call validate-variable-definition, $(DEV_DIR), $$DEV_DIR is not set)
+$(call validate-variable-definition, $(ENV_TYP), $$ENV_TYP is not set)
 
 DEV_SRC := $(shell echo $$DEV_SRC)
 DEV_GEN := $(shell echo $$DEV_GEN)

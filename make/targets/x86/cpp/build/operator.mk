@@ -19,6 +19,13 @@ endif
 # Prerequisites Definitions
 #
 ifeq ($(TARGET_TYPE),$(TEST_TARGET_TYPE))
+
+  ifeq ($(TEST_AMOUNT),all)
+    include $(BLD_SYS_DIR)/$(X86_CPP_BUILD_PATH)/test/all/prerequisites.mk
+  else
+    include $(BLD_SYS_DIR)/$(X86_CPP_BUILD_PATH)/test/specific/prerequisites.mk
+  endif
+
   include $(BLD_SYS_DIR)/$(X86_CPP_BUILD_PATH)/test/prerequisites.mk
 endif
 

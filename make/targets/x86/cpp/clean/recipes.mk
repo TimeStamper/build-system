@@ -16,7 +16,7 @@ define clean-builds
              $(CD) `dirname $$object_file`; \
              $(RM) $$object_file; \
            done
-  $(SILENT)for dependency_file in $(DEPENDECY_FILES); do \
+  $(SILENT)for dependency_file in $(DEPENDENCY_FILES); do \
              $(CD) `dirname $$dependency_file`; \
              $(RM) $$dependency_file; \
            done
