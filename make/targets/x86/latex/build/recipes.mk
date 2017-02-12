@@ -15,6 +15,7 @@ define generate-latex-pdf
 	$(call print-command,"Generating PDF document from $(patsubst $(DEV_SRC)%,\$$DEV_SRC%,$(2))")
 	$(call create-directory, $(1))
 	$(SILENT)$(CD) $(dir $(2)) && \
+           $(LATEX_TO_PDF) $(TARGET_DIRECTORY_OPTION)="$(strip $(1))" $(notdir $(2)) &&\
            $(LATEX_TO_PDF) $(TARGET_DIRECTORY_OPTION)="$(strip $(1))" $(notdir $(2))
 endef
 
