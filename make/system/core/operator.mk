@@ -28,10 +28,18 @@ include $(BLD_SYS_DIR)/$(SYSTEM_CORE_PATH)/validator.mk
 # Target Rule Forking
 #
 ifeq ($(TARGET_ENVIRONMENT),x86)
-  ifneq ($(filter %build,$(MAKECMDGOALS)),,)
-    include $(BLD_SYS_DIR)/$(X86_CPP_BUILD_PATH)/operator.mk
-    include $(BLD_SYS_DIR)/$(X86_CPP_CLEAN_PATH)/operator.mk
-    include $(BLD_SYS_DIR)/$(X86_CPP_EXECUTE_PATH)/operator.mk
+
+  ifeq ($(SOURCE_LANGUAGE),cpp)
+    $(info MAKECMDGOALS = $(MAKECMDGOALS))
+    ifneq ($(filter %build,$(MAKECMDGOALS)),,)
+      include $(BLD_SYS_DIR)/$(X86_CPP_BUILD_PATH)/operator.mk
+      include $(BLD_SYS_DIR)/$(X86_CPP_CLEAN_PATH)/operator.mk
+      include $(BLD_SYS_DIR)/$(X86_CPP_EXECUTE_PATH)/operator.mk
+    endif
+  endif
+
+  ifeq ($(SOURCE_LANGUAGE),latex)
+    include $(BLD_SYS_DIR)/$(X86_LATEX_BUILD_PATH)/operator.mk
   endif
 endif
 

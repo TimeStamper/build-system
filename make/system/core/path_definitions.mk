@@ -19,4 +19,13 @@ X86_CPP_BUILD_PATH := make/targets/x86/cpp/build
 X86_CPP_CLEAN_PATH := make/targets/x86/cpp/clean
 X86_CPP_EXECUTE_PATH := make/targets/x86/cpp/execute
 
+
+#---------------------------------------------------------------------------------------------------
+# x86 Latex Path Definitions
+#
+X86_LATEX_BUILD_PATH := make/targets/x86/latex/build
+X86_LATEX_CLEAN_PATH := make/targets/x86/latex/clean
+X86_LATEX_READ_PATH := make/targets/x86/latex/read
+
+
 #---------------------------------------------------------------------------------------------------

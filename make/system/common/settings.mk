@@ -12,7 +12,9 @@ AR := ar
 CC := /usr/bin/g++
 CD := cd
 CP := cp -r
+EVINCE := evince
 LD := $(CC)
+LATEX_TO_PDF := pdflatex
 PRINT := /usr/bin/printf
 RM := rm -f
 
