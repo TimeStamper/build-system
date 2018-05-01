@@ -30,7 +30,6 @@ include $(BLD_SYS_DIR)/$(SYSTEM_CORE_PATH)/validator.mk
 ifeq ($(TARGET_ENVIRONMENT),x86)
 
   ifeq ($(SOURCE_LANGUAGE),cpp)
-    $(info MAKECMDGOALS = $(MAKECMDGOALS))
     ifneq ($(filter %build,$(MAKECMDGOALS)),,)
       include $(BLD_SYS_DIR)/$(X86_CPP_BUILD_PATH)/operator.mk
       include $(BLD_SYS_DIR)/$(X86_CPP_CLEAN_PATH)/operator.mk
